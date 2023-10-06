@@ -1,4 +1,3 @@
 #!/bin/sh
 
-nitrogen --restore &
-xgamma -rgamma 0.7 -ggamma 0.75 -bgamma 0.7 &
+xgamma -rgamma 0.55 -ggamma 0.6 -bgamma 0.55 &
