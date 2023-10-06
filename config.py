@@ -78,13 +78,12 @@ slash_powerlineLeft = {
 keys = [
     # Key Binding
     Key([mod], "d", lazy.spawn("rofi -show drun"), desc="Run Rofi"),
-    Key([mod], "w", lazy.spawn("firefox"), desc='Brave Browser'),
+    Key([mod], "w", lazy.spawn("firefox"), desc='Firefox'),
     Key([mod, "shift"], "Return", lazy.spawn("thunar"), desc='Thunar'),
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
     Key([mod], "q", lazy.window.kill(), desc="Kill focused window"),
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
-    Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
     Key([mod], "f", lazy.window.toggle_fullscreen()),
 
     # Window Focus
@@ -215,9 +214,6 @@ screens = [
                         background = colors[9],
                         **arrow_powerlineRight,
                         ),
-                #widget.StatusNotifier(),
-                #widget.Systray(),
-                #widget.DF(),
                 widget.PulseVolume(font="JetbrainsMono Nerd Font Bold",
                         fontsize = 15,
                         fmt="󰕾 {}",
@@ -255,7 +251,6 @@ screens = [
                         #**arrow_powerlineRight,
                         #),
                 #widget.Bluetooth(),
-                #widget.BatteryIcon(),
                 widget.Clock(font="JetbrainsMono Nerd Font Bold",
                         fontsize = 15,
                         foreground = colors[9],
@@ -268,6 +263,8 @@ screens = [
                         foreground = colors[1],
                         background = colors[1]
                         ),
+                #widget.StatusNotifier(),
+                #widget.Systray(),
                 #widget.QuickExit(),
             ],
             30,
@@ -317,4 +314,3 @@ wl_input_rules = None
 
 # WM Name
 wmname = "LG3D"
-
