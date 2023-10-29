@@ -10,7 +10,7 @@ from qtile_extras.widget.decorations import PowerLineDecoration
 mouse_callbacks={'Button1': lambda: logger.info("Mouse callback - button 1 clicked")}
 
 mod = "mod4"
-terminal = "alacritty"
+terminal = "kitty"
 
 # Autostart
 import os
@@ -184,11 +184,23 @@ screens = [
     Screen(
         bottom=bar.Bar(
             [
+                widget.Sep(
+                        linewidth = 1,
+                        padding = 5,
+                        foreground = colors[1],
+                        background = colors[1]
+                        ),
                 widget.CurrentLayoutIcon(
                         padding = 0,
                         scale = 0.7,
                         foreground = colors[9],
                         background = colors[1],
+                        ),
+                widget.Sep(
+                        linewidth = 1,
+                        padding = 5,
+                        foreground = colors[1],
+                        background = colors[1]
                         ),
                 widget.GroupBox(font="JetbrainsMono Nerd Font Bold",
                         fontsize = 15,
@@ -214,26 +226,26 @@ screens = [
                         background = colors[9],
                         **arrow_powerlineRight,
                         ),
-                widget.PulseVolume(font="JetbrainsMono Nerd Font Bold",
-                        fontsize = 15,
-                        fmt="󰕾 {}",
-                        foreground=colors[9],
-                        background=colors[1],
-                        padding=10,
-                        **arrow_powerlineRight,
-                        ),
+                #widget.PulseVolume(font="JetbrainsMono Nerd Font Bold",
+                        #fontsize = 15,
+                        #fmt="󰕾 {}",
+                        #foreground=colors[9],
+                        #background=colors[1],
+                        #padding=10,
+                        #**arrow_powerlineRight,
+                        #),
                 #widget.Spacer(
                         #length=1,
                         #background=colors[1],
                         #**arrow_powerlineRight,
                         #),
-                widget.Battery(font="JetbrainsMono Nerd Font Bold",
-                        fontsize = 15,
-                        format="󱊣 {percent:2.0%}",
-                        foreground=colors[9],
-                        background=colors[1],
-                        **arrow_powerlineRight,
-                        ),
+                #widget.Battery(font="JetbrainsMono Nerd Font Bold",
+                        #fontsize = 15,
+                        #format="󱊣 {percent:2.0%}",
+                        #foreground=colors[9],
+                        #background=colors[1],
+                        #**arrow_powerlineRight,
+                        #),
                 #widget.Memory(font="JetbrainsMono Nerd Font Bold",
                         #fontsize = 15,
                         #padding=5,
@@ -259,7 +271,7 @@ screens = [
                         ),
                 widget.Sep(
                         linewidth = 1,
-                        padding = 10,
+                        padding = 5,
                         foreground = colors[1],
                         background = colors[1]
                         ),
